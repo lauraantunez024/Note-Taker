@@ -9,8 +9,10 @@ app.use(express.static('public'));
 
 app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
 
+// API ROUTES
+
+
 // HTML ROUTES
 app.use('/', htmlRoutes);
 
 
-// API ROUTES
