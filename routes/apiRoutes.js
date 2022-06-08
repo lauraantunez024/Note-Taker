@@ -1,9 +1,12 @@
 const router = require("express").Router();
-const { 
-    readFromFile, 
+const { v4: uuidv4 } = require('uuid')
+
+const {
+    readFromFile,
     readAndAppend,
-    writeToFile 
-    } = require('../helpers/fsUtils');
+    writeToFile,
+  } = require('../helpers/fsUtils');
+  
 
 router.get('/notes', (req, res) => {
     res.json('get')
@@ -11,8 +14,8 @@ router.get('/notes', (req, res) => {
 
 router.post('/notes', (req, res) => {
     const newNote = req.body;
-    newNote.id = uuid();
-    readAndAppend(newNote, '../db/db.json')
-})
+    newNote.id = uuidv4();
+    readAndAppend(newNote, './db/db.json')
+});
 
 module.exports = router;

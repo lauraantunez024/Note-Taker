@@ -1,6 +1,6 @@
 const express = require("express");
-const req = require("express/lib/request");
-const router = require("./routes/htmlRoutes");
+// const req = require("express/lib/request");
+// const router = require("express").Router();
 const htmlRoutes = require('./routes/htmlRoutes')
 const apiRoutes = require('./routes/apiRoutes')
 
